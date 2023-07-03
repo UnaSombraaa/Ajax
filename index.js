@@ -1,13 +1,14 @@
 function solicitudAJAX(params) {
-    var url = "https://github.com/alexwohlbruck/cat-facts";
+    var url = "https://catfact.ninja/fact?max_length=140";
     var objXMLHttpRequest = new XMLHttpRequest();
     objXMLHttpRequest.onreadystatechange = function () {
       if (objXMLHttpRequest.readyState === 4) {
         if (objXMLHttpRequest.status === 200) {
+            console.log(objXMLHttpRequest.responseText);
           let json = JSON.parse(objXMLHttpRequest.responseText);
-          for (let i = 0; i < json.results.length; i++) {
-            buscarPorURL(json.results[i].url);
-          }
+        
+
+          console.dir(JSON);
         } else {
           alert("Error Code: " + objXMLHttpRequest.status);
           alert("Error Message: " + objXMLHttpRequest.statusText);
