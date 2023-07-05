@@ -1,5 +1,6 @@
+
 function solicitudAJAX(params) {
-    var url = "https://catfact.ninja/fact?max_length=140";
+    var url = "https://api.thecatapi.com/v1/images/search?breed_ids=%7Bbreed.id%7D";
     var objXMLHttpRequest = new XMLHttpRequest();
     objXMLHttpRequest.onreadystatechange = function () {
       if (objXMLHttpRequest.readyState === 4) {
@@ -15,6 +16,6 @@ function solicitudAJAX(params) {
         }
       }
     };
-    objXMLHttpRequest.open("GET", url);
+    objXMLHttpRequest.open("GET", url + ".breeds");
     objXMLHttpRequest.send();
   }
